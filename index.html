@@ -1,457 +1,627 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ALTAR — Colorings, Presets & Resources</title>
+/* =========================================
+   VARIABLES
+========================================= */
 
-    <meta name="description"
-        content="ALTAR — colorings, presets and digital resources for editors.">
+:root {
+    --black: #050609;
+    --black-2: #080b12;
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    --blue: #0a1833;
+    --blue-2: #0d2142;
 
-<body>
+    --gold: #b99a55;
+    --gold-light: #d2b875;
 
-    <!-- =========================================
-         NAVIGATION
-    ========================================== -->
+    --white: #eeeae0;
+    --muted: #85858a;
 
-    <header class="navbar">
+    --border: rgba(185, 154, 85, 0.25);
+    --border-soft: rgba(255, 255, 255, 0.08);
+}
 
-        <a href="index.html" class="logo">
-            ALTAR
-        </a>
 
-        <nav class="nav-links">
-            <a href="shop.html">SHOP</a>
-            <a href="lightroom.html">LIGHTROOM</a>
-            <a href="after-effects.html">AFTER EFFECTS</a>
-            <a href="bundles.html">BUNDLES</a>
-            <a href="about.html">ABOUT</a>
-        </nav>
+/* =========================================
+   RESET
+========================================= */
 
-        <a href="shop.html" class="nav-button">
-            VIEW SHOP
-        </a>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    </header>
 
+html {
+    scroll-behavior: smooth;
+}
 
-    <!-- =========================================
-         HERO
-    ========================================== -->
 
-    <main>
+body {
+    background: var(--black);
+    color: var(--white);
 
-        <section class="hero">
+    font-family: "DM Sans", sans-serif;
 
-            <div class="hero-glow"></div>
+    min-height: 100vh;
+}
 
-            <div class="hero-content">
 
-                <p class="eyebrow">
-                    DIGITAL RESOURCES FOR EDITORS
-                </p>
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-                <h1>
-                    ALTAR
-                </h1>
 
-                <div class="hero-line"></div>
+button {
+    font: inherit;
+}
 
-                <p class="hero-description">
-                    Colorings, presets and resources made to give
-                    your edits their own atmosphere.
-                </p>
 
-                <a href="shop.html" class="hero-button">
-                    ENTER THE SHOP
-                    <span>→</span>
-                </a>
+/* =========================================
+   NAVBAR
+========================================= */
 
-            </div>
+.navbar {
+    height: 78px;
 
-            <div class="hero-mark">
-                <span>EST.</span>
-                <strong>2026</strong>
-            </div>
+    padding: 0 5vw;
 
-        </section>
+    display: flex;
+    align-items: center;
 
+    border-bottom: 1px solid var(--border-soft);
 
-        <!-- =========================================
-             INTRO
-        ========================================== -->
+    background: rgba(5, 6, 9, 0.96);
 
-        <section class="intro">
+    position: sticky;
+    top: 0;
 
-            <div class="section-label">
-                <span>01</span>
-                THE COLLECTION
-            </div>
+    z-index: 100;
+}
 
-            <div class="intro-content">
 
-                <h2>
-                    Made for the frame.
-                </h2>
+.logo {
+    font-family: "Cinzel", serif;
 
-                <p>
-                    ALTAR is a collection of digital resources
-                    for editors who care about colour, movement
-                    and atmosphere.
-                </p>
+    font-size: 22px;
 
-            </div>
+    font-weight: 500;
 
-        </section>
+    letter-spacing: 0.18em;
 
+    color: var(--gold-light);
 
-        <!-- =========================================
-             FEATURED PRODUCTS
-        ========================================== -->
+    margin-right: 70px;
+}
 
-        <section class="featured">
 
-            <div class="section-heading">
+.nav-links {
+    display: flex;
+    align-items: center;
 
-                <div>
-                    <span class="section-number">02</span>
+    gap: 28px;
 
-                    <h2>
-                        FEATURED
-                    </h2>
-                </div>
+    flex: 1;
+}
 
-                <a href="shop.html" class="text-link">
-                    VIEW ALL
-                    <span>→</span>
-                </a>
 
-            </div>
+.nav-links a,
+.cart-link {
+    font-size: 9px;
 
+    letter-spacing: 0.14em;
 
-            <div class="product-grid">
+    color: #a8a8aa;
 
-                <!-- PRODUCT 01 -->
+    transition: color 0.25s ease;
+}
 
-                <a href="shop.html" class="product-card">
 
-                    <div class="product-image product-one">
+.nav-links a:hover,
+.cart-link:hover {
+    color: var(--gold-light);
+}
 
-                        <span class="product-number">
-                            01
-                        </span>
 
-                        <span class="product-type">
-                            LIGHTROOM
-                        </span>
+.cart-link {
+    color: var(--gold);
 
-                        <div class="product-placeholder">
-                            ALTAR
-                        </div>
+    white-space: nowrap;
+}
 
-                    </div>
 
-                    <div class="product-info">
+.cart-link span {
+    margin-left: 5px;
 
-                        <div>
-                            <h3>
-                                SOFT GOLD
-                            </h3>
+    color: var(--muted);
+}
 
-                            <p>
-                                Lightroom Preset
-                            </p>
-                        </div>
 
-                        <span class="price">
-                            $2
-                        </span>
+/* =========================================
+   SHOP PAGE
+========================================= */
 
-                    </div>
+.shop-page {
+    width: min(1400px, 90%);
 
-                </a>
+    margin: 0 auto;
 
+    padding: 70px 0 120px;
+}
 
-                <!-- PRODUCT 02 -->
 
-                <a href="shop.html" class="product-card">
+/* =========================================
+   SHOP HEADER
+========================================= */
 
-                    <div class="product-image product-two">
+.shop-header {
+    display: flex;
 
-                        <span class="product-number">
-                            02
-                        </span>
+    justify-content: space-between;
 
-                        <span class="product-type">
-                            AFTER EFFECTS
-                        </span>
+    align-items: flex-end;
 
-                        <div class="product-placeholder">
-                            ALTAR
-                        </div>
+    padding-bottom: 35px;
 
-                    </div>
+    border-bottom: 1px solid var(--border-soft);
 
-                    <div class="product-info">
+    margin-bottom: 35px;
+}
 
-                        <div>
-                            <h3>
-                                VINTAGE
-                            </h3>
 
-                            <p>
-                                After Effects Coloring
-                            </p>
-                        </div>
+.shop-label {
+    font-size: 8px;
 
-                        <span class="price">
-                            $5
-                        </span>
+    letter-spacing: 0.2em;
 
-                    </div>
+    color: var(--gold);
 
-                </a>
+    margin-bottom: 13px;
+}
 
 
-                <!-- PRODUCT 03 -->
+.shop-header h1 {
+    font-family: "Cinzel", serif;
 
-                <a href="shop.html" class="product-card">
+    font-size: clamp(28px, 4vw, 48px);
 
-                    <div class="product-image product-three">
+    font-weight: 400;
 
-                        <span class="product-number">
-                            03
-                        </span>
+    letter-spacing: 0.07em;
+}
 
-                        <span class="product-type">
-                            BUNDLE
-                        </span>
 
-                        <div class="product-placeholder">
-                            ALTAR
-                        </div>
+/* =========================================
+   FILTERS
+========================================= */
 
-                    </div>
+.shop-controls {
+    display: flex;
 
-                    <div class="product-info">
+    gap: 22px;
 
-                        <div>
-                            <h3>
-                                THE ARCHIVE
-                            </h3>
+    align-items: center;
+}
 
-                            <p>
-                                Colouring + Preset Bundle
-                            </p>
-                        </div>
 
-                        <span class="price">
-                            $10
-                        </span>
+.filter {
+    background: none;
 
-                    </div>
+    border: none;
 
-                </a>
+    padding: 5px 0;
 
-            </div>
+    color: var(--muted);
 
-        </section>
+    font-size: 8px;
 
+    letter-spacing: 0.13em;
 
-        <!-- =========================================
-             CATEGORIES
-        ========================================== -->
+    cursor: pointer;
 
-        <section class="categories">
+    position: relative;
+}
 
-            <div class="section-label">
-                <span>03</span>
-                EXPLORE
-            </div>
 
-            <div class="category-list">
+.filter::after {
+    content: "";
 
-                <a href="lightroom.html" class="category-item">
+    position: absolute;
 
-                    <span class="category-number">
-                        01
-                    </span>
+    bottom: 0;
+    left: 0;
 
-                    <div>
-                        <h3>
-                            LIGHTROOM
-                        </h3>
+    width: 0;
+    height: 1px;
 
-                        <p>
-                            Presets & colour profiles
-                        </p>
-                    </div>
+    background: var(--gold);
 
-                    <span class="category-arrow">
-                        ↗
-                    </span>
+    transition: width 0.25s ease;
+}
 
-                </a>
 
+.filter:hover,
+.filter.active {
+    color: var(--gold-light);
+}
 
-                <a href="after-effects.html" class="category-item">
 
-                    <span class="category-number">
-                        02
-                    </span>
+.filter.active::after,
+.filter:hover::after {
+    width: 100%;
+}
 
-                    <div>
-                        <h3>
-                            AFTER EFFECTS
-                        </h3>
 
-                        <p>
-                            Colorings & editing resources
-                        </p>
-                    </div>
+/* =========================================
+   PRODUCT GRID
+========================================= */
 
-                    <span class="category-arrow">
-                        ↗
-                    </span>
+.product-grid {
+    display: grid;
 
-                </a>
+    grid-template-columns: repeat(3, 1fr);
 
+    gap: 45px 22px;
+}
 
-                <a href="bundles.html" class="category-item">
 
-                    <span class="category-number">
-                        03
-                    </span>
+/* =========================================
+   PRODUCT CARD
+========================================= */
 
-                    <div>
-                        <h3>
-                            BUNDLES
-                        </h3>
+.product-card {
+    display: block;
 
-                        <p>
-                            Collections at one place
-                        </p>
-                    </div>
+    min-width: 0;
+}
 
-                    <span class="category-arrow">
-                        ↗
-                    </span>
 
-                </a>
+.product-preview {
+    position: relative;
 
-            </div>
+    aspect-ratio: 1 / 1.12;
 
-        </section>
+    overflow: hidden;
 
+    border: 1px solid var(--border-soft);
 
-        <!-- =========================================
-             ABOUT PREVIEW
-        ========================================== -->
+    display: flex;
 
-        <section class="about-preview">
+    align-items: center;
+    justify-content: center;
 
-            <div class="about-mark">
-                A
-            </div>
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
 
-            <div class="about-text">
 
-                <span class="section-number">
-                    04 — ABOUT ALTAR
-                </span>
+.product-card:hover .product-preview {
+    border-color: var(--border);
 
-                <h2>
-                    A small archive<br>
-                    of things worth keeping.
-                </h2>
+    transform: translateY(-3px);
+}
 
-                <p>
-                    ALTAR began with a simple idea:
-                    editing resources don't have to feel
-                    disposable. Everything here is made
-                    with a particular look, mood or purpose
-                    in mind.
-                </p>
 
-                <a href="about.html" class="text-link">
-                    ABOUT ALTAR
-                    <span>→</span>
-                </a>
+.product-index {
+    position: absolute;
 
-            </div>
+    top: 16px;
+    left: 17px;
 
-        </section>
+    font-size: 8px;
 
-    </main>
+    letter-spacing: 0.14em;
 
+    color: var(--gold);
+}
 
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
 
-    <footer class="footer">
+.product-category {
+    position: absolute;
 
-        <div class="footer-top">
+    top: 16px;
+    right: 17px;
 
-            <div class="footer-brand">
+    font-size: 7px;
 
-                <a href="index.html" class="logo">
-                    ALTAR
-                </a>
+    letter-spacing: 0.12em;
 
-                <p>
-                    Colorings · Presets · Resources
-                </p>
+    color: #99999d;
+}
 
-            </div>
 
+/* =========================================
+   PRODUCT VISUALS
+========================================= */
 
-            <div class="footer-links">
+.preview-one {
+    background:
+        radial-gradient(
+            circle at 70% 25%,
+            rgba(208, 179, 111, 0.28),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #080806,
+            #18170f 50%,
+            #060607
+        );
+}
 
-                <div>
-                    <span>SHOP</span>
 
-                    <a href="shop.html">All Products</a>
-                    <a href="lightroom.html">Lightroom</a>
-                    <a href="after-effects.html">After Effects</a>
-                    <a href="bundles.html">Bundles</a>
-                </div>
+.preview-two {
+    background:
+        radial-gradient(
+            circle at 35% 60%,
+            rgba(30, 68, 126, 0.65),
+            transparent 38%
+        ),
+        linear-gradient(
+            140deg,
+            #05070c,
+            #0a1c39,
+            #05070c
+        );
+}
 
 
-                <div>
-                    <span>INFO</span>
+.preview-three {
+    background:
+        radial-gradient(
+            circle at 65% 35%,
+            rgba(111, 82, 143, 0.42),
+            transparent 35%
+        ),
+        linear-gradient(
+            140deg,
+            #0a080d,
+            #241a2c,
+            #08070b
+        );
+}
 
-                    <a href="about.html">About</a>
-                    <a href="support.html">Support</a>
-                </div>
 
-            </div>
+.preview-four {
+    background:
+        radial-gradient(
+            circle at 40% 35%,
+            rgba(26, 51, 87, 0.7),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #050608,
+            #101b2c,
+            #050608
+        );
+}
 
-        </div>
 
+.preview-five {
+    background:
+        radial-gradient(
+            circle at 70% 60%,
+            rgba(50, 96, 69, 0.5),
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            #060907,
+            #102119,
+            #050706
+        );
+}
 
-        <div class="footer-bottom">
 
-            <span>
-                © 2026 ALTAR
-            </span>
+.preview-six {
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(185, 154, 85, 0.15),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #071020,
+            #08090d 50%,
+            #0a162b
+        );
+}
 
-            <span>
-                MADE BY ALTARVENOM
-            </span>
 
-        </div>
+.preview-title {
+    font-family: "Cinzel", serif;
 
-    </footer>
+    font-size: clamp(25px, 3vw, 43px);
 
+    line-height: 1.05;
 
-    <script src="js/script.js"></script>
+    text-align: center;
 
-</body>
+    letter-spacing: 0.1em;
 
-</html>
+    color: rgba(238, 234, 224, 0.82);
+}
+
+
+/* =========================================
+   PRODUCT DETAILS
+========================================= */
+
+.product-details {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    padding-top: 15px;
+}
+
+
+.product-details h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.06em;
+}
+
+
+.product-details p {
+    margin-top: 6px;
+
+    font-size: 10px;
+
+    color: var(--muted);
+}
+
+
+.product-price {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    color: var(--gold-light);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    width: 90%;
+
+    margin: 0 auto;
+
+    padding: 28px 0;
+
+    border-top: 1px solid var(--border-soft);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.footer-brand {
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+
+    letter-spacing: 0.15em;
+
+    color: var(--gold);
+}
+
+
+.footer-note,
+.footer-copy {
+    font-size: 7px;
+
+    letter-spacing: 0.15em;
+
+    color: #65656a;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .logo {
+        margin-right: 35px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 8px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 68px;
+
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-right: 0;
+
+        font-size: 19px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .shop-page {
+        width: 92%;
+
+        padding-top: 45px;
+    }
+
+    .shop-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 28px;
+    }
+
+    .shop-controls {
+        width: 100%;
+
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+
+        gap: 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+    }
+
+    .product-preview {
+        aspect-ratio: 1 / 1.05;
+    }
+
+    .footer {
+        width: 92%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+}
